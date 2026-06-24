@@ -25,14 +25,14 @@ pipeline {
             steps {
                 script{
                     if(params.LaunchAllTests){
-                        sh "npx playwright test"
+                        sh "npx playwright test --reporter=list"
                     }
                     else{
                             if(params.UseSpecificTag){
-                                sh "npx playwright test --project=${params.browser} --grep '${tag}'"
+                                sh "npx playwright test --project=${params.browser} --grep '${tag}' --reporter=list"
                             }
                             else{
-                                sh "npx playwright test --project=${params.browser}"
+                                sh "npx playwright test --project=${params.browser} --reporter=list"
                             }
                         }
                 }
