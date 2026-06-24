@@ -1,5 +1,10 @@
 pipeline {
-    agent any
+    agent {
+        docker { 
+            image 'mcr.microsoft.com/playwright:v1.59.1-noble'
+            args '-u=root --entrypoint='
+        } 
+    }
     parameters {
         booleanParam(name: 'LaunchAllTests', defaultValue: false, description: 'Toggle this value to launch all tests')
         booleanParam(name: 'UseSpecificBrowser', defaultValue: false, description: 'Toggle this value to use a specific browser')
