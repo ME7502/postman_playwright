@@ -7,8 +7,8 @@ pipeline {
     }
     parameters {
         booleanParam(name: 'LaunchAllTests', defaultValue: false, description: 'Toggle this value to launch all tests')
-        booleanParam(name: 'UseSpecificBrowser', defaultValue: false, description: 'Toggle this value to use a specific browser')
-        booleanParam(name: 'UseSpecificTag', defaultValue: false, description: 'Toggle this value to use a specific tag')
+        booleanParam(name: 'UseSpecificBrowser', defaultValue: true, description: 'Toggle this value to use a specific browser')
+        booleanParam(name: 'UseSpecificTag', defaultValue: true, description: 'Toggle this value to use a specific tag')
 
 
         choice(name: 'browser', choices: ['chromium', 'firefox', 'webkit'], description: 'Pick a browser to run the test in')
